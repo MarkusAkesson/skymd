@@ -1,0 +1,17 @@
+[package]
+name = "skymd"
+version = "0.1.0"
+authors = ["Markus Åkesson <macke.95_06@hotmail.com>"]
+edition = "2018"
+license = "MIT"
+build = "build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+zeroize = "1"
+rand = "0.7.3"
+rand_core = "0.5.0"
+
+[build-dependencies]
+cc = "1.0"
