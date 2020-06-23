@@ -5,6 +5,9 @@ authors = ["Markus Åkesson <macke.95_06@hotmail.com>"]
 edition = "2018"
 license = "MIT"
 build = "build.rs"
+description = "Rust bindings for hacl*"
+documentation = "https://docs.rs/skymd"
+repository = "https://github.com/MarkusAkesson/skymd"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
