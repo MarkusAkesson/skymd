@@ -13,7 +13,7 @@ readme = "README.md"
 include = [
     "**/*.rs",
     "Cargo.toml",
-    "hacl-star/dist/c89-compatible/*",
+    "hacl-star/dist/c89-compatible/*{.c,.h}",
     "hacl-star/dist/kremlin/*",
 ]
 
