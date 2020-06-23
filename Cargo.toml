@@ -10,6 +10,12 @@ documentation = "https://docs.rs/skymd"
 repository = "https://github.com/MarkusAkesson/skymd"
 homepage = "https://github.com/MarkusAkesson/skymd"
 readme = "README.md"
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+    "hacl-star/dist/c89-compatible/*",
+    "hacl-star/dist/kremlin/*",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
