@@ -1,6 +1,9 @@
 #[allow(dead_code)]
 #[link(name = "evercrypt", kind = "static")]
 extern "C" {
+    // Auto config
+    pub(crate) fn EverCrypt_AutoConfig2_init();
+
     // ChaChaPoly AEAD
     pub(crate) fn EverCrypt_Chacha20Poly1305_aead_encrypt(
         k: *const u8,

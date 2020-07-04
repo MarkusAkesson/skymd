@@ -2,17 +2,17 @@ use crate::ffi::{
     EverCrypt_Chacha20Poly1305_aead_decrypt, EverCrypt_Chacha20Poly1305_aead_encrypt,
 };
 
-const KEY_SIZE: usize = 32;
-const TAG_SIZE: usize = 16;
-const NONCE_SIZE: usize = 24;
+pub const KEY_LEN: usize = 32;
+pub const TAG_LEN: usize = 16;
+pub const NONCE_LEN: usize = 24;
 
 pub fn decrypt(
-    key: &[u8; KEY_SIZE],
-    nonce: &[u8; NONCE_SIZE],
+    key: &[u8; KEY_LEN],
+    nonce: &[u8; NONCE_LEN],
     associated_data: &[u8],
     plaintext: &mut [u8],
     ciphertext: &[u8],
-    tag: &[u8; TAG_SIZE],
+    tag: &[u8; TAG_LEN],
 ) -> Result<(), ()> {
     let res = unsafe {
         EverCrypt_Chacha20Poly1305_aead_decrypt(
@@ -34,12 +34,12 @@ pub fn decrypt(
 }
 
 pub fn encrypt(
-    key: &[u8; KEY_SIZE],
-    nonce: &[u8; NONCE_SIZE],
+    key: &[u8; KEY_LEN],
+    nonce: &[u8; NONCE_LEN],
     associated_data: &[u8],
     plaintext: &[u8],
     ciphertext: &mut [u8],
-    tag: &mut [u8; TAG_SIZE],
+    tag: &mut [u8; TAG_LEN],
 ) {
     unsafe {
         EverCrypt_Chacha20Poly1305_aead_encrypt(
@@ -61,13 +61,14 @@ mod tests {
 
     #[test]
     fn encrypt_test() {
-        let key = [1; KEY_SIZE];
-        let nonce = [1; NONCE_SIZE];
+        crate::skymd_init();
+        let key = [1; KEY_LEN];
+        let nonce = [1; NONCE_LEN];
         let associated_data = [1; 10];
         let plaintext = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         let mut decrypted = [0; 10];
         let mut ciphertext = [0; 10];
-        let mut tag = [0; TAG_SIZE];
+        let mut tag = [0; TAG_LEN];
 
         encrypt(
             &key,

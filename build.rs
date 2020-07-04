@@ -29,6 +29,9 @@ fn main() {
         .define("_BSD_SOURCE", None)
         .define("_DEFAULT_SOURCE", None);
 
+    #[cfg(target_arch = "x86_64")]
+    builder.define("EVERCRYPT_TARGETCONFIG_X64", None);
+
     builder
         .include(&c89)
         .include(&c89.join("include"))

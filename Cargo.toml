@@ -1,6 +1,6 @@
 [package]
 name = "skymd"
-version = "0.1.0"
+version = "0.1.8"
 authors = ["Markus Åkesson <macke.95_06@hotmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -13,7 +13,7 @@ readme = "README.md"
 include = [
     "**/*.rs",
     "Cargo.toml",
-    "hacl-star/dist/c89-compatible/*{.c,.h}",
+    "hacl-star/dist/c89-compatible/*{.c,.h,.S}",
     "hacl-star/dist/kremlin/*",
 ]
 
