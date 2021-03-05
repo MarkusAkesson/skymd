@@ -1,10 +1,7 @@
 use rand_core::{OsRng, RngCore};
 use zeroize::Zeroize;
 
-use crate::ffi::{
-    EverCrypt_Curve25519_ecdh, EverCrypt_Curve25519_scalarmult,
-    EverCrypt_Curve25519_secret_to_public,
-};
+use crate::ffi::{EverCrypt_Curve25519_ecdh, EverCrypt_Curve25519_secret_to_public};
 
 pub const KEY_LEN: usize = 32;
 
