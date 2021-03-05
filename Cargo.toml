@@ -1,6 +1,6 @@
 [package]
 name = "skymd"
-version = "0.1.8"
+version = "0.1.9"
 authors = ["Markus Åkesson <macke.95_06@hotmail.com>"]
 edition = "2018"
 license = "MIT"
