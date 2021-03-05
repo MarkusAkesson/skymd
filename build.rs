@@ -18,12 +18,12 @@ fn main() {
         .static_flag(true)
         .flag("-std=gnu11")
         .flag("-Wno-unused-variable")
-        .flag("-Wno-unused-but-set-variable")
         .flag("-Wno-unused-parameter")
         .flag("-g")
         .flag("-fwrapv")
         .flag("-march=native")
-        .flag("-mtune=native");
+        .flag("-mtune=native")
+        .flag("-O2");
 
     builder
         .define("_BSD_SOURCE", None)
