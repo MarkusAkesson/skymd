@@ -1,6 +1,6 @@
 [package]
 name = "skymd"
-version = "0.1.9"
+version = "0.1.10"
 authors = ["Markus Åkesson <macke.95_06@hotmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -25,4 +25,4 @@ rand = "0.7.3"
 rand_core = "0.5.0"
 
 [build-dependencies]
-cc = "1.0"
+cc = { version = "1.0", features = ["parallel"] }
