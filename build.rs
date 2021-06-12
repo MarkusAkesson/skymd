@@ -14,16 +14,18 @@ fn main() {
     let mut builder = cc::Build::new();
 
     builder
+        .compiler("clang")
         .warnings_into_errors(true)
         .static_flag(true)
         .flag("-std=gnu11")
+        .extra_warnings(true)
         .flag("-Wno-unused-variable")
         .flag("-Wno-unused-parameter")
         .flag("-g")
         .flag("-fwrapv")
         .flag("-march=native")
         .flag("-mtune=native")
-        .flag("-O2");
+        .opt_level(2);
 
     builder
         .define("_BSD_SOURCE", None)
@@ -58,7 +60,7 @@ fn main() {
         .iter()
         .for_each(|suffix| add_files(suffix));
 
-    builder.files(files);
+    builder.files(&files);
     dbg!(&builder);
     builder.compile("libevercrypt.a");
 }
